@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noai, noimageai, noimageindex" />
     <title>Gerrard: Leading Through Service</title>
     <style>
       /* ===== Reset & Base ===== */
@@ -1006,6 +1007,20 @@
         link.addEventListener("click", function () {
           document.querySelector(".nav-links").classList.remove("open");
         });
+      });
+
+      // Prevent right-click on images
+      document.addEventListener("contextmenu", function (e) {
+        if (e.target.tagName === "IMG") {
+          e.preventDefault();
+        }
+      });
+
+      // Prevent dragging images
+      document.addEventListener("dragstart", function (e) {
+        if (e.target.tagName === "IMG") {
+          e.preventDefault();
+        }
       });
     </script>
   </body>
